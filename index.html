@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Selamat Idul Fitri</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <style>
+            h1 {
+                text-align: center;
+            }
+            ul{
+                text-align: center;
+                width: 100%;
+                list-style: none;
+                padding: 0;
+            }
+            li{
+                list-style: none;
+                height: 50px;
+            }
+            li a{
+                padding: 10px;
+                background-color:darkblue;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="text">
+            Selamat Hari Raya Idul Fitri
+            <br>
+        </h1>
+        <ul id="button-parent">
+            <li><a href="#" onclick="Next()">Mohon Maaf Lahir dan Batin</a></li>
+            <li><a href="#" onclick="Apa()">Apaan sih</a></li>
+            <li><a href="#" onclick="Peduli()">Ga peduli gw</a></li>
+        </ul>
+        <script>
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            let price = urlParams.get('p')
+            function Hide(){
+                document.getElementById("button-parent").setAttribute("style","display:none");
+            }
+            function Next(){
+                document.getElementById("text").textContent = "Bayar dulu utang lu "+price;
+                Hide();
+            }
+            function Apa(){
+                document.getElementById("text").textContent = "APA? Utang lu bayar dulu "+price;
+                Hide();
+            }
+            function Peduli(){
+                document.getElementById("text").textContent = "Allah peduli bro, utang lu yang "+price+" bakal berat di akhirat.";
+                Hide();
+            }
+        </script>
+    </body>
+</html>
